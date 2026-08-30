@@ -237,3 +237,101 @@ hr.rule {
   .card { padding: 30px 32px 34px; }
   h1 { font-size: 34px; }
 }
+
+/* Index page — grupos por familia */
+.group-list {
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.group {
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.group-summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 16px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.group-summary::-webkit-details-marker { display: none; }
+
+.group-summary .names { display: flex; flex-direction: column; gap: 1px; }
+.group-summary .common { font-weight: 600; font-size: 16px; }
+.group-summary .sci {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.group-summary .meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.group-summary .count {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.group-summary .chevron {
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid var(--rust);
+  border-bottom: 1.5px solid var(--rust);
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.group[open] > .group-summary .chevron { transform: rotate(45deg); }
+
+.group-items {
+  border-top: 1px solid var(--line);
+  padding: 6px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.group-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 10px;
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.group-item:hover,
+.group-item:focus-visible { background: var(--paper); }
+
+.group-item .num {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  color: var(--rust);
+  font-size: 13px;
+  min-width: 20px;
+}
+
+.group-item .names { display: flex; flex-direction: column; gap: 1px; }
+.group-item .common { font-weight: 600; font-size: 15px; }
+.group-item .sci { font-family: "Fraunces", Georgia, serif; font-style: italic; font-size: 12.5px; color: var(--ink-soft); }
